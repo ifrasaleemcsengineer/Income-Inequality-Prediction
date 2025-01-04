@@ -1,9 +1,4 @@
-# Ignore the env folder inside the Backend directory
 Backend/env/
-
-# Ignore the __pycache__ folder inside the Backend directory
 Backend/__pycache__/
-
-# Ignore the node_modules folder inside the Frontend directory
 Frontend/node_modules/
 
