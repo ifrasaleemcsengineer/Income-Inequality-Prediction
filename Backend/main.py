@@ -11,6 +11,7 @@ from imblearn.over_sampling import RandomOverSampler
 import numpy as np
 import warnings
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi import Query
 
 warnings.filterwarnings("ignore")
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
@@ -38,8 +39,6 @@ def preprocess_dataframe(df):
     except Exception as e:
         logger.error(f"Error preprocessing dataframe: {e}")
         raise HTTPException(status_code=400, detail=f"Error preprocessing dataframe: {e}")
-
-from fastapi import Query
 
 @app.get("/get-data-head/")
 def get_data_head(row_limit: int = Query(5, ge=1)):
